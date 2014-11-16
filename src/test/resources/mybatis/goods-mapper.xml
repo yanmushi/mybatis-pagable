@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yanmushi.framework.dao.GoodsDao">
+	<resultMap type="com.yanmushi.framework.dao.entity.Goods"
+		autoMapping="true" id="MockTest">
+		<id property="id" jdbcType="INTEGER" column="id" />
+		<result property="sn" jdbcType="VARCHAR" column="sn" />
+		<result property="store" jdbcType="INTEGER" column="store" />
+	</resultMap>
+
+	<select id="countAll" resultType="int">
+		select count(*) c from goods
+	</select>
+
+	<select id="page" resultType="com.yanmushi.framework.dao.entity.Goods">
+		select * from goods
+	</select>
+</mapper>
